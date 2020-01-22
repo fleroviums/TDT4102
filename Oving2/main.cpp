@@ -89,7 +89,7 @@ void CrownToEur(){
 	while (NOK < 0){
 		NOK = inputDouble();
 	}
-	cout << "Prisen i EUR blir " << NOK/9.75 << setprecision(3) << fixed << '\n';
+	cout << "Prisen i EUR blir " << setprecision(3) << fixed << NOK/9.75  << '\n';
 }
 /*
 Valgte inputDouble siden int 10/9.5=1 men double 10/9.5=1,05
@@ -184,24 +184,26 @@ void pythagoras(){
 }
 // ======= ..END OPPGAVE 5 FUNCTIONS ======= 
 // ======= BEGIN OPPGAVE 6 FUNCTIONS ======= 
-void calculateSeries(double amount, double interest, double yrs){
+vector<double> calculateSeries(double amount, double interest, double yrs){
 	double remaining = amount;
-	cout << "Ar" << setw(20) << "Innbetaling\n";
+	vector<double> betalingsplan;
 	for (int i=0; i<yrs;i++){
-		cout << setw(2) << i+1 << setw(15) << amount/yrs+interest/100*remaining <<'\n';
+		betalingsplan.push_back(amount/yrs+interest/100*remaining);
 		remaining -= amount/yrs;
 	} 
 	cout << '\n';
+	return betalingsplan;
 }
 
-void calculateAnnuity(double amount, double interest, double yrs){
+vector<double> calculateAnnuity(double amount, double interest, double yrs){
 	double innb = amount*(interest/100)/(1-pow(1+interest/100,-yrs));
 	innb = static_cast<int>(innb); //Fjerner desimal forhåpentligvis
-	cout << "Ar" << setw(20) << "Innbetaling\n";
+	vector<double> betalingsplan;
 	for (int i=0; i<yrs; i++){
-		cout << setw(2) << i+1 << setw(15) << innb << '\n';
+		betalingsplan.push_back(innb);
+		//cout << setw(2) << i+1 << setw(15) << innb << '\n';
 	}
-	cout << '\n';
+	return betalingsplan;
 }
 
 void comparison(double amount, double interest, double yrs){
@@ -220,6 +222,20 @@ void comparison(double amount, double interest, double yrs){
 		cout << setw(2) << i+1 << setw(20) << paymentA << setw(20) << paymentS << setw(20) << paymentA-paymentS << '\n';
 	}
 	cout << "Total" << setw(17) << counterA << setw(20) << counterS << setw(20) << counterA-counterS << '\n';
+}
+void Veccomparison(double amount, double interest, double yrs){
+	cout << "Ar" << setw(20) << "Annuitet" << setw(20) << "Serie" << setw(20) << "Differanse\n";
+	vector<double> annuity = calculateAnnuity(amount,interest,yrs);
+	vector<double> serielan = calculateSeries(amount,interest,yrs);
+	double totalAnn = 0;
+	double totalSer = 0; 
+	for (int i=0; i<yrs;++i){
+		cout << setw(2) << i+1 << setw(20) << annuity[i] << setw(20) << serielan[i] << setw(20) << annuity[i]-serielan[i] << '\n';
+		totalAnn += annuity[i];
+		totalSer += serielan[i];
+	}
+	cout << "Total" << setw(17) << totalAnn << setw(20) << totalSer << setw(20) << totalAnn-totalSer << '\n';
+
 }
 
 
@@ -260,7 +276,7 @@ int main()
 			pythagoras();
 		}
 		else if (choice == 7){
-			comparison(10000,3,10);
+			Veccomparison(10000,3,10);
 		}
 	}
 	keep_window_open();

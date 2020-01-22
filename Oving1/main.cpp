@@ -17,7 +17,7 @@ int fibonacci(int n){
 	int b = 1;
 	cout << "Fibonacci numbers:\n";
 	for(int x=1; x<n+1; x++){
-		cout << x << ' ' << ' ' << b << '\n';
+		cout << x << "  " << b << '\n';
 		int temp = b;
 		b += a;
 		a = temp;
@@ -68,6 +68,7 @@ int findGreatestDivisor(int n){
 			return divisor;
 		}
 	}
+	return -1;
 }
 
 
@@ -93,7 +94,6 @@ int main()
 	cout << findGreatestDivisor(40) << '\n';
 
 	keep_window_open();
-	return 0; //Skal main() noe?
 }
 
 

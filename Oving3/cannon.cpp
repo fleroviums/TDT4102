@@ -26,3 +26,29 @@ void printTime(double time){
 double flightTime(double initVelocityY){
     return -2*initVelocityY/acclY();
 }
+double getUserInputTheta(){
+    double theta = 0;
+    cout << "Skriv inn vinkel: ";
+    cin >> theta;
+    return theta;
+}
+double getUserInputAbsVelocity(){
+    double AbsVel = 0;
+    cout << "Skriv fart i absoluttverdi: ";
+    cin >> AbsVel;
+    return AbsVel;
+}
+double degToRad(double deg){
+    return deg/360.0*2*3.141592;
+}
+double getVelocityX(double theta, double absVelocity){
+    return absVelocity*cos(theta);
+}
+double getVelocityY(double theta, double absVelocity){
+    return absVelocity*sin(theta);
+}
+vector<double> getVelocityVector(double theta, double absVelocity){
+    double velX = getVelocityX(theta, absVelocity);
+    double velY = getVelocityY(theta, absVelocity);
+    return {velX, velY};
+}
