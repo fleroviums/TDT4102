@@ -10,7 +10,7 @@ double posX(double initPosition, double initVelocity, double time){
     return initPosition+initVelocity*time;
 }
 double posY(double initPosition, double initVelocity, double time){
-    return initPosition+initVelocity*time+0.5*acclY()*pow(time,2);
+    return initPosition+initVelocity*time+0.5*acclY()*time*time;
 }
 
 void printTime(double time){
@@ -48,7 +48,19 @@ double getVelocityY(double theta, double absVelocity){
     return absVelocity*sin(theta);
 }
 vector<double> getVelocityVector(double theta, double absVelocity){
-    double velX = getVelocityX(theta, absVelocity);
-    double velY = getVelocityY(theta, absVelocity);
-    return {velX, velY};
+    double degs = degToRad(theta);
+    double velX = getVelocityX(degs, absVelocity);
+    double velY = getVelocityY(degs, absVelocity);
+    vector<double> returnvec {velX, velY};
+    return returnvec;
+}
+
+double getDistanceTraveled(double velocityX, double velocityY){
+	double time = flightTime(velocityY);
+	return time * velocityX;
+    }
+
+double targetPractice(double distanceToTarget, double velocityX, double velocityY){
+    double diff = getDistanceTraveled(velocityX, velocityY) - distanceToTarget;
+    return diff;
 }
