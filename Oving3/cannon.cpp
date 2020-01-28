@@ -39,7 +39,7 @@ double getUserInputAbsVelocity(){
     return AbsVel;
 }
 double degToRad(double deg){
-    return deg/360.0*2*3.141592;
+    return deg/360.0*2*_Pi;
 }
 double getVelocityX(double theta, double absVelocity){
     return absVelocity*cos(theta);
