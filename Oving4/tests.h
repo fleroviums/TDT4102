@@ -5,3 +5,5 @@ void testCallByValue();
 void testCallByReference();
 void testSwapNumbers();
 void testVectorSorting();
+void testPrintStruct();
+void testString();

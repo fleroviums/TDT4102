@@ -1,5 +1,6 @@
 #include "std_lib_facilities.h"
 #include "utilities.h"
+#include "tests.h"
 
 void testCallByValue() {
     int v0 = 5;
@@ -26,11 +27,11 @@ void testCallByReference() {
 void testSwapNumbers(){
     int num1 = 4;
     int num2 = 5;
-    vector<int> result {swapNumbers(num1, num2)};
+    swapNumbers(num1, num2);
     cout << "num1: " << num1
-    << " num2: " << num2
-    << " result: " << result[0] << ", " << result[1] << '\n';
+    << " num2: " << num2;
 }
+
 void testVectorSorting(){
     vector<int> percentages;
     cout << "percentages innhold: ";
@@ -38,10 +39,28 @@ void testVectorSorting(){
     vector<int> newVec = randomizeVector(percentages, 10);
     cout << "percentages innhold nå: ";
     printIntVec(percentages);
+    cout << "\'Medianen\' (før sort) til percentages er " << medianOfVector(percentages) << '\n';
+    cout << "Prøver sortvector(): \n";
+    sortVector(percentages);
+    printIntVec(percentages);
 
+    cout << "Medianen (etter sort) til percentages er " << medianOfVector(percentages) << '\n';
 
-    // Easy swapping
     swapNumbers(percentages[0], percentages[1]);
     cout << "percentages etter swap: ";
     printIntVec(percentages);
+}
+void testPrintStruct(){
+    try{
+    Student Student1{"Jonas", "Indøk", -22};
+    printStudent(Student1);
+    }
+    catch (exception& e) {
+        cerr << e.what();   
+    }
+
+}
+
+void testString(){
+
 }
