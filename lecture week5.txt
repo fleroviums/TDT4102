@@ -12,6 +12,10 @@ int main(){
 	myBirthday.year = 1990;
 	myBirthday.month = ...;
 	...
+	}
+	* year, month and day are public member variables when using struct
+	*If we had used "class Date {..}", the variables couldn't be changed, only the class.	
 
-# year, month and day are public member variables when using struct
-# If we had used "class Date {..}", the variables couldn't be changed, only the class.
+# Helper functions
+	* The constructor is a member function with the same name as struct/class
+	* Makes initializing more safe
