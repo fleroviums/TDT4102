@@ -41,13 +41,13 @@ void playMastermind(){
         cout << "\nRiktig på riktig plass: " << checkCharactersAndPosition(code, guess);
         cout << "\nRiktige bokstaver.....: " << checkCharacters(code, guess) << '\n';
         attempt += 1; // Denne kjøres selv om man gjetter 100% riktig første gang, derfor initieres attempt=0
-        cout << "Du har " << maxAttempts-attempt << " forsøk igjen\n"
+        cout << "Du har " << maxAttempts-attempt << " forsøk igjen\n";
     }
     while(guess != code && attempt <= maxAttempts);
     if(attempt<=maxAttempts){
             cout << "\nGratulerer, du gjettet riktig kode!\n";
     }
     else{
-        cout <<"\nAii, der gikk du dessverre tom for forsøk.. Men du er like verdifull uansett!\n"
+        cout <<"\nAii, der gikk du dessverre tom for forsøk.. Men du er like verdifull uansett!\n";
     }
 }
