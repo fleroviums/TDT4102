@@ -1,5 +1,7 @@
 #include "std_lib_facilities.h"
 #include "utilities.h"
+#include "tests.h"
+#include "mastermind.h"
 
 void printIntVec(vector<int> toPrint){
     for (auto elem : toPrint){
@@ -77,6 +79,41 @@ Student::Student(string n, string s, int a) : name{ n }, studyProgram{ s }, age{
 void printStudent(Student studthing) {
 	cout << "Studentens navn: " << studthing.name << "\nStudieretning: " << studthing.studyProgram << "\nAlder: " << studthing.age << endl;
 }
-string randomizeString(int charNum, char firstLim, char lastLim){
+string randomizeString(int charLen, char lowerLim, char upperLim){
+    int lLim{(int)lowerLim}; //Fant på nettet, er dette tilsvarende static cast?
+    int uLim{(int)upperLim};
+    string randS = "";
+    char c = 'A'; //Trivial value:)
+    for (int i=0;i<charLen;++i){
+        c = rand()%(uLim+1-lLim) + lLim; // Generates rand char between lLim and uLim.
+        randS += c;
+    }
+    return randS;
+}
 
+string readInputToString(int n, char lowerCh, char upperCh){
+    string usrString;
+    lowerCh = toupper(lowerCh);
+    upperCh = toupper(upperCh); //In case user inputs lowercase in function
+    for (int i=0;i<n;++i){
+        char usrInp;
+        cout << "Skriv inn char: ";
+        cin >> usrInp;
+        while (toupper(usrInp) < lowerCh || toupper(usrInp) > upperCh){
+            cout << "Ugyldig char.\nSkriv inn char: ";
+            cin >> usrInp;
+        }
+        usrString += toupper(usrInp);
+    }
+    return usrString;
+}
+
+int countChar(string data, char ch){ //Case-sensitive, no mentions of it though..
+    int freq=0;
+    for (auto c : data){
+        if(c==ch){
+            freq+=1;
+        }
+    }
+    return freq;
 }

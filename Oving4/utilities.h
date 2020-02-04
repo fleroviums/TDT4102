@@ -36,4 +36,6 @@ struct Student{
 
 void printStudent(Student studthing);
 
-string randomizeString(int charNum, char firstLim, char lastLim);
+string randomizeString(int charLen, char lowerLim, char upperLim);
+string readInputToString(int n, char lowerCh, char upperCh);
+int countChar(string data, char ch);

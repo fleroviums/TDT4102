@@ -1,6 +1,8 @@
 #include "std_lib_facilities.h"
 #include "utilities.h"
 #include "tests.h"
+#include "mastermind.h"
+
 /*
 Oppgave 1A:
 	Funksjonen bruker pass by value, så v0 forblir det samme
@@ -17,13 +19,23 @@ int main()
 	srand(static_cast<unsigned int>(time(nullptr)));
 	int i=-1;
 	while (i!=0){
-		cout << "\nØVING 4 \n"
-		<< "0) Avslutt\n"
+		cout<<"            _                 ___ \n"
+		<<"           (_)               /   |\n"
+		<<"  _____   ___ _ __   __ _   / /| |\n"
+		<<" / _ \\ \\ / / | '_ \\ / _` | / /_| |\n"
+		<<"| (_) \\ V /| | | | | (_| | \\___  |\n"
+		<<" \\___/ \\_/ |_|_| |_|\\__, |     |_/\n"
+		<<"                     __/ |        \n"
+		<<"                    |___/         \n";
+
+		cout << "0) Avslutt\n"
 		<< "1) testCallByValue()\n"
 		<< "2) testCallByReference()\n"
 		<< "3) testSwapNumbers()\n"
 		<< "4) testVectorSorting()\n"
-		<< "5) testPrintStruct()\n";
+		<< "5) testPrintStruct()\n"
+		<< "6) testString()\n"
+		<< "7) playMastermind()\n";
 		cin >> i;
 
 		switch(i){
@@ -38,7 +50,12 @@ int main()
 				break;
 		case 5: testPrintStruct();
 				break;
+		case 6: testString();
+				break;
+		case 7: playMastermind();
+				break;
 		default: cout << "Ugyldig valg\n";
+				break;
 		}
 	}
 	

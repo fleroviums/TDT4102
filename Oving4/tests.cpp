@@ -1,6 +1,7 @@
 #include "std_lib_facilities.h"
 #include "utilities.h"
 #include "tests.h"
+#include "mastermind.h"
 
 void testCallByValue() {
     int v0 = 5;
@@ -62,5 +63,27 @@ void testPrintStruct(){
 }
 
 void testString(){
+    string grades = randomizeString(8,'A','F');
+    cout << "Tilfeldige karakterer: " << grades <<'\n';
 
+    string fineString = readInputToString(5,'B','E');
+    cout << "\nDu er ferdig: " << fineString;
+    cout << "\nAntall 'C' i strengen du ga meg: " << countChar(fineString, 'C') << '\n';
+
+    vector<int> gradeCount;
+    for (int i=0;i<6;++i){
+        gradeCount.push_back(countChar(grades,'A'+i));
+    }
+
+    double avgSum = 0.0;
+    double freqSum = 0.0;
+    for (int i=5;i>=0;--i){
+        avgSum += i*gradeCount[abs(i-5)]; //tre A gir 5*3 fex
+        cout << avgSum << " er avgsum";
+        freqSum += gradeCount[abs(i-5)];
+        cout << avgSum << " er freqsum";
+    }
+    cout << "avg =" << avgSum << "/" << freqSum;
+    double average = avgSum/freqSum;
+    cout << "Gjennomsnittet av karakterene: " << average << '\n';
 }

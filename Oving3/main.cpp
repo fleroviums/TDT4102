@@ -49,6 +49,7 @@ int main()
 {
 	srand(static_cast<unsigned int>(time(nullptr))); //Seeding randoms
 	setlocale(LC_ALL, "no_NB.UTF-8"); // Norwegian letters patch
+	cout << acclY();
 	playTargetPractise();
 	/* FUNCTIONS FOR TESTING:
 	for (int i=0;i<20;++i){
