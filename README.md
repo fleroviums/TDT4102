@@ -1,9 +1,8 @@
-# Unngå å bli tatt i plagiering
-
-Det anbefales å ikke kopiere flere linjer av kode for å fullføre oppgaven (les: fossk0king). Disse filene er ikke tiltenkt offentligheten, men en samling av eget arbeid. Repoen er også laget for å forenkle samarbeid ved sammenlikning av løsningsmetoder for diverse oppgaver.
+Jeg er litt ny til Github så forhåpentligvis ligger disse filene privat xDDD
 
 
-Du kan også ta noen ekstra steg for å sikre deg at du ikke blir tatt for plagiering:
+*Disse filene er ikke tiltenkt offentligheten, men en samling av eget arbeid. Repoen er også laget for å forenkle samarbeid ved sammenlikning av løsningsmetoder for diverse oppgaver.*
+
 
 1) **Endre variabelnavn.** Gjør endringer på variabelnavn, bytt rekkefølge på hvor funksjoner deklareres og liknende.
 
