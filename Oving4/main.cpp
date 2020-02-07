@@ -3,6 +3,11 @@
 #include "tests.h"
 #include "mastermind.h"
 
+#include "masterVisual.h"
+#include "Graph.h"
+#include "Simple_window.h"
+
+
 /*
 Oppgave 1A:
 	Funksjonen bruker pass by value, så v0 forblir det samme
@@ -15,6 +20,7 @@ Oppgave 1E:
 
 int main()
 {
+	using namespace Graph_lib;
 	setlocale(LC_ALL, "no_NB.UTF-8");
 	srand(static_cast<unsigned int>(time(nullptr)));
 	int i=-1;
@@ -60,4 +66,5 @@ int main()
 	}
 	
 	keep_window_open();
+	return gui_main();
 }

@@ -2,6 +2,7 @@
 #include "utilities.h"
 #include "tests.h"
 #include "mastermind.h"
+#include "masterVisual.h"
 
 constexpr int _SIZE = 4;
 constexpr int letters = 6; // constexpr er bedre enn cosnt
@@ -31,12 +32,17 @@ int checkCharacters(string code, string guess){
 
 
 void playMastermind(){
+    MastermindWindow mwin{Point{900, 20}, winW, winH, "Mastermind"};
     cout << "M A S T E R M I N D\n";
     string code = randomizeString(_SIZE, 'A', 'A' + (letters-1));
     string guess {""};
     int attempt = 0;
+    int visWrap = 0;
     do{
-        guess = readInputToString(_SIZE, 'A', 'A'+(letters-1));
+        guess = mwin.getInput(_SIZE, 'A', 'A'+(letters-1));
+        //guess = readInputToString(_SIZE, 'A', 'A'+(letters-1));
+        addGuess(mwin, guess, _SIZE, guess[0], attempt, visWrap);
+        addFeedback(mwin, checkCharactersAndPosition(code, guess), checkCharacters(code, guess), _SIZE, attempt, visWrap);
 
         cout << "\nRiktig på riktig plass: " << checkCharactersAndPosition(code, guess);
         cout << "\nRiktige bokstaver.....: " << checkCharacters(code, guess) << '\n';
@@ -49,5 +55,6 @@ void playMastermind(){
     }
     else{
         cout <<"\nAii, der gikk du dessverre tom for forsøk.. Men du er like verdifull uansett!\n";
+        mwin.redraw();
     }
 }
