@@ -99,6 +99,7 @@ string readInputToString(int n, char lowerCh, char upperCh){
         char usrInp;
         cout << "Skriv inn char: ";
         cin >> usrInp;
+        //usrInp = toupper(usrInp);
         while (toupper(usrInp) < lowerCh || toupper(usrInp) > upperCh){
             cout << "Ugyldig char.\nSkriv inn char: ";
             cin >> usrInp;

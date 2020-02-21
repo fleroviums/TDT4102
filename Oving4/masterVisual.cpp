@@ -23,7 +23,7 @@ void addFeedback(MastermindWindow &mwin,const int correctPosition, const int cor
 		wrapOver += 1;
 	}
 	for (int i=0;i<correctPosition;++i){ //Draws all black circles
-		color = 0;
+		color = Color::black;
 		mwin.vc.push_back(new Circle{Point{static_cast<int>(padX*(8.2+0.3*i)),yPos},radCircle});
 		mwin.vc[mwin.vc.size()-1].set_fill_color(color);
 		mwin.attach(mwin.vc[mwin.vc.size()-1]);

@@ -53,7 +53,7 @@ void testVectorSorting(){
 }
 void testPrintStruct(){
     try{
-    Student Student1{"Jonas", "Indøk", -22};
+    Student Student1{"Jonas", "Indøk", 22};
     printStudent(Student1);
     }
     catch (exception& e) {
