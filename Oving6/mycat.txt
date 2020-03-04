@@ -1,3 +1,0 @@
-TDT4102: Prosedyre- og objektorientert programmering
-TDT4110: Informasjonsteknologi grunnkurs
-TMA4100: Matematikk 1

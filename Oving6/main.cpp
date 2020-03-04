@@ -14,7 +14,7 @@ Teori
 */
 
 void oppg1(){
-	//printToFile("test.txt");
+	printToFile("test.txt");
 	lineNumber("gutta.txt");
 	cout << "File read sucessfully!\n";
 }

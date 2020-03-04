@@ -29,7 +29,6 @@ void lineNumber(string infile){
     string thisLine;
     while (getline(in, thisLine)) {
         ost << lineNum << " " << thisLine << '\n';
-         // Skjønner ikke hvordan while loopen funker
         lineNum += 1;
     }
 }

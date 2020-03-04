@@ -11,5 +11,4 @@ class CourseCatalog{
         string getCourse(string coCode);
         void loadCatalog(string inFile);
         void saveCatalog(string outFile, CourseCatalog cc);
-        //CourseCatalog(map<string, string> courses) : c {courses}; // Trenger jeg en sånn?
 };
