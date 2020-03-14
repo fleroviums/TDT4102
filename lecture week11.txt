@@ -1,0 +1,14 @@
+09.03.2020 Hjelp i R1
+		Pointers
+* Initialize pointer to nullptr, never undefined (int* tPtr; no no)
+
+		Dynamic memory mgt
+* Can reserve memory during runtime and not only compilation
+* int* p_int = new int{4};
+	- Person* p_person = new Person[size]; /#person-obj
+* Objects allocated dynamically survive a scope, e.g. in  a fuction
+* To avoid memory leakage, use delete / delete[]
+	* Set pointer variable to nullptr after
+
+		Destructors
+* Only think about it when using dynamic memory (and some times statics)
