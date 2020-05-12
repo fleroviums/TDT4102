@@ -1,0 +1,1 @@
+noe kode er i task1.cpp, task2.cpp osv, fordi jeg ikke skjønte at vi skulle skrive på utdelt kode før jeg så på den sorrry
