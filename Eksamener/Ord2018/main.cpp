@@ -1,4 +1,6 @@
 #include "std_lib_facilities.h"
+#include "task2.h"
+
 //1 - Kodeforståelse
 /*
 1a)		33
@@ -15,7 +17,14 @@
 int main()
 {
 	cout << "Hello, World!\n";
-
+	Date d1;
+	d1.d = 31;
+	d1.m = 1;
+	d1.y = 2020;
+	Event ev1;
+	ev1.id = 1; ev1.name = "meeting 1"; ev1.when = d1;
+	vector<Event *> events; events.push_back(&ev1);
+	printEvents(events); 
 	keep_window_open();
 }
 
