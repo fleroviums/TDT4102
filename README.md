@@ -11,5 +11,3 @@
 2) **Legg til whitespaces.** Legg til whitespace og newline flere områder i koden.
 
 3) **Begrens hvem du deler repo med.** Generelt ikke send linken på ikke-krypterte kanaler som Messenger, nettforum eller offentlige pastes som pastebin e.l.
-
-4) **(På egen risiko) last opp korrupt fil på BB.** F.eks ta et vilkårlig bilde på ca. 2.5-3 MiB og endre filtype til .zip, og last opp. Dette anbefales ikke da man strengt tatt skal laste opp arbeidet i en zip på BB.
