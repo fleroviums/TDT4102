@@ -59,6 +59,14 @@ string dateToString(const Date& day){
     dd += to_string(day.d); 
     return yyyy + '-' + mm + '-' + dd;
 }
+string dateToString_improved(const Date& day){
+    if(!checkDate(day)) return "INVALID DATE";
+    stringstream sout;
+    sout << setfill('0') << setw(4) << day.y << '-' << setw(2) << day.m << '-' << setw(2) << day.d;
+    return sout.str();
+}
+
+
 ostream & operator<<(ostream&out, const Event&rhs){
     out << rhs.id << " : " << rhs.name << " @ " << dateToString(rhs.when);
     return out;
@@ -100,4 +108,32 @@ vector<Event *> Calendar::getEvents(int year, int month, int day){
         }
     }
     return theseEvents;
+}
+
+vector<Date> Calendar::busyDates(int threshold){
+    map<Date, int> dateFreq;
+    vector<Date> bussy;
+    for(auto ev : events){
+        Date curr = ev.second->when;
+        if(dateFreq.find(curr) == dateFreq.end())
+            dateFreq[curr] = 1; //maybe ugly but eh
+        else
+            dateFreq[curr] += 1;
+    }
+    for(auto m : dateFreq){
+        if(m.second >= threshold)
+            bussy.push_back(m.first);
+    }
+    return bussy;
+}
+
+bool operator<(const Date& lhs, const Date&rhs){
+    if(lhs.y < rhs.y){return true;}
+    else if(lhs.y == rhs.y){
+        if(lhs.m < rhs.m){return true;}
+        else if(lhs.m == rhs.m){
+            if(lhs.d < rhs.d){return true;}
+        }
+    }
+    return false;
 }
