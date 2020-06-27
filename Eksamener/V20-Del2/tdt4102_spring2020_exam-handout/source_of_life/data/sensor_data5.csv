@@ -1,0 +1,8 @@
+timestep,dam,inflow,outflow
+2,dam03,50,0
+10,dam03,200,0
+11,dam03,11,0
+13,dam03,110,0
+14,dam03,11,0
+20,dam03,0,1500
+30,dam03,0,30

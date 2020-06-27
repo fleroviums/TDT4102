@@ -1,0 +1,4 @@
+dam_name,ideal_level,critical_high,critical_low,outlet_capacity,inlet_capacity
+dam01,1200,1800,400,40,50
+dam02,600,800,200,30,20
+dam03,800,1000,500,30,0
